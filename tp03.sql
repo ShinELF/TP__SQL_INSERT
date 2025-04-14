@@ -1,7 +1,7 @@
 -- a. Listez toutes les données concernant les articles
 SELECT * FROM article;
 -- b. Listez uniquement les références et désignations des articles de plus de 2 euros
-SELECT * FROM article WHERE PRIX>=2;
+SELECT REF,DESIGNATION FROM article WHERE PRIX>=2;
 -- c. En utilisant les opérateurs de comparaison, listez tous les articles dont le prix est compris entre 2 et 6.25 euros
 SELECT * FROM article WHERE PRIX>=2 AND PRIX<=6.25;
 -- d. En utilisant l'opérateur BETWEEN, listez tous les articles dont le prix est compris entre 2 et 6.25 euros
