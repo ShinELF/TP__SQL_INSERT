@@ -21,7 +21,7 @@ SELECT * FROM bon WHERE DATE_CMDE BETWEEN '2019/03/01 12:00:00' AND '2019/04/05 
 -- k. Sélectionnez les divers bons de commande qui contiennent des boulons
 SELECT bon.NUMERO FROM bon, compo, article WHERE bon.ID=compo.ID_BON AND compo.ID_ART=article.ID AND article.DESIGNATION LIKE '%boulon%' GROUP BY bon.NUMERO;
 -- l. Sélectionnez les divers bons de commande qui contiennent des boulons avec le nom du fournisseur associé.
-SELECT bon.NUMERO, article.DESIGNATION, fournisseur.NOM FROM bon, compo, article, fournisseur WHERE bon.ID=compo.ID_BON AND compo.ID_ART=article.ID AND article.ID_FOU=fournisseur.ID AND article.DESIGNATION LIKE '%boulon%' GROUP BY bon.NUMERO, article.DESIGNATION, fournisseur.NOM;
+SELECT bon.NUMERO, article.DESIGNATION, fournisseur.NOM FROM bon, compo, article, fournisseur WHERE bon.ID=compo.ID_BON AND compo.ID_ART=article.ID AND article.ID_FOU=fournisseur.ID AND article.DESIGNATION LIKE '%boulon%';
 -- m. Calculez le prix total de chaque bon de commande
 SELECT bon.NUMERO, SUM(article.PRIX*compo.QTE) as Total FROM bon, compo, article WHERE bon.ID=compo.ID_BON AND compo.ID_ART=article.ID GROUP BY bon.NUMERO;
 -- n. Comptez le nombre d'articles de chaque bon de commande
